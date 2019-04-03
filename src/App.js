@@ -9,7 +9,11 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
+<<<<<<< HEAD
             Edit <code>src/App.js</code> and save to JIN.
+=======
+            Edit <code>src/App.js</code> and save to start and start and start.
+>>>>>>> 8193bb4be5178c57ee8310925a978afbd95cda7c
           </p>
           <a
             className="App-link"

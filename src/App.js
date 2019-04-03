@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Inventory from './Components/Inventory';
-import Home from './Components/Home'
+import Home from './Components/Home';
+import House from './Components/House';
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
         This is App
         <Inventory />
         <Home />
+        <House />
       </div>
     );
   }

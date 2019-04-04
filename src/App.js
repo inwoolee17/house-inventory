@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import Inventory from './Components/Inventory';
-import Home from './Components/Home';
-import House from './Components/House';
+import Routes from './Routes';
+import {Link} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        This is App
-        <Inventory />
-        <Home />
-        <House />
+        <Link to="/">Home</Link>
+        <Link to="/inventory">Inventory</Link>
+        {Routes}
       </div>
     );
   }

@@ -1,3 +1,15 @@
 .House {
     color: green;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.House > img {
+    height: 200px;
+    width: 400px;
+}
+
+.House > span {
+    display: block;
 }

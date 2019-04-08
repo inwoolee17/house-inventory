@@ -21,12 +21,7 @@ app.use(session({
     }
 }));
 
-app.get('api/inventory', (req, res) => {
-    const db = req.app.get('db');
-    db.read_inventory()
-    .then( results => res.status(200).send(results) )
-    .catch( () => res.status(500).send() );
-});
+app.get('/api/inventory', inventoryController.getInventory);
 
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

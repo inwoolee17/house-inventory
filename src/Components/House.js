@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './House.css';
-import imageOne from '../Media/house_01.jpg';
-import imageTwo from '../Media/house_02.jpg';
-import imageThree from '../Media/house_03.jpg';
 import axios from 'axios';
 
 class House extends Component {
@@ -27,21 +24,21 @@ class House extends Component {
   };
 
   render() {
+    let inventory = this.state.inventory ? this.state.inventory.map( (e, i) => {
+      return (
+        <div key={i} className="House">
+          <div>House Listing</div>
+          <img src={e.image} alt={"House"} />
+          <span>{e.name}</span>
+          <span>{e.price}</span>
+          <span>Swimming Pool: {e.swimming_pool}</span>
+        </div>
+      );
+    }) : null;
+    console.log("this is my inventory", this.state.inventory);
     return (
       <div className="House">
-        <div>House Listing</div>
-        <img src={imageOne} alt={"House"} />
-        <span>House_01</span>
-        <span>Price: $200</span>
-        <span>Swimming Pool: No</span>
-        <img src={imageTwo} alt={"House"} />
-        <span>House_02</span>
-        <span>Price: $200</span>
-        <span>Swimming Pool: No</span>
-        <img src={imageThree} alt={"House"} />
-        <span>House_03</span>
-        <span>Price: $200</span>
-        <span>Swimming Pool: No</span>
+        {inventory}
       </div>
     );
   }

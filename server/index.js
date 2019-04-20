@@ -23,7 +23,7 @@ app.use(session({
 
 app.get('api/inventory', (req, res) => {
     const db = req.app.get('db');
-    db.read_inventory()
+    db.read_in
     .then( results => res.status(200).send(results) )
     .catch( () => res.status(500).send() );
 });

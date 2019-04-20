@@ -9,6 +9,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "g": "^2.0.1",
     "massive": "^5.7.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

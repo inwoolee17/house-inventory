@@ -26,12 +26,13 @@ class House extends Component {
   render() {
     let inventory = this.state.inventory ? this.state.inventory.map( (e, i) => {
       return (
-        <div key={i} className="House">
-          <div>House Listing</div>
+        <div key={i} className="HouseList">
           <img src={e.image} alt={"House"} />
-          <span>{e.name}</span>
-          <span>Price: {e.price}</span>
-          <span>Swimming Pool: {e.swimming_pool}</span>
+          <div className="HouseList-Description">
+            <span>{e.name}</span>
+            <span>Price: {e.price}</span>
+            <span>Swimming Pool: {e.swimming_pool}</span>
+          </div>
         </div>
       );
     }) : null;

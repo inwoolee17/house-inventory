@@ -2,14 +2,23 @@
     color: green;
     align-items: center;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.HouseList > img {
+    height: 100px;
+    width: 200px;
+}
+
+.HouseList {
+    display: flex;
     flex-direction: column;
+    margin: 25px;
 }
 
-.House > img {
-    height: 200px;
-    width: 400px;
-}
-
-.House > span {
-    display: block;
+.HouseList-Description {
+    display: flex;
+    flex-direction: column;
 }

@@ -1,9 +1,3 @@
 .Inventory {
     color: blue;
 }
-
-.HouseBox {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}

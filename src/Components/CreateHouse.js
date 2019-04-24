@@ -11,4 +11,8 @@ class CreateHouse extends Component {
   }
 }
 
+<<<<<<< HEAD
 export default CreateHouse;
+=======
+export default CreateHouse;
+>>>>>>> 7c227da4908050f1a8687560e79d4a6b0deef94c

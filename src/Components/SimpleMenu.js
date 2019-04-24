@@ -48,10 +48,10 @@ class SimpleMenu extends React.Component {
             <Link style={StyledLink} to="/inventory">Inventory</Link>
           </MenuItem>
           <MenuItem onClick={this.handleClose}>
-            <Link style={StyledLink} to="/CreateHouse">Add House</Link>
+            <Link style={StyledLink} to="/addhouse">Add House</Link>
           </MenuItem>
           <MenuItem onClick={this.handleClose}>
-            <Link style={StyledLink} to="/DeleteHouse">Delete House</Link>
+            <Link style={StyledLink} to="/deletehouse">Delete House</Link>
           </MenuItem>
         </Menu>
       </div>

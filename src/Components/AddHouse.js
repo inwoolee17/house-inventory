@@ -9,7 +9,7 @@ class AddHouse extends Component {
     this.state = {
       houseName: '',
       housePrice: '',
-      swimmingPool: '',
+      swimmingPool: 'Yes',
       houseImage: '',
     }
   }

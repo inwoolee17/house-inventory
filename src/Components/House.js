@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import './House.css';
 import axios from 'axios';
+import { css } from '@emotion/core';
+import ClipLoader from 'react-spinners/ClipLoader';
+
+const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+`;
 
 class House extends Component {
   constructor(){
@@ -8,13 +16,15 @@ class House extends Component {
 
     this.state = {
       inventory: null,
+      loading: true,
     }
   };
 
   componentDidMount(){
     axios.get('/api/inventory')
-      .then(res => {
+      .then(res => {  
       this.setState({
+        loading: false,
         inventory: res.data
       })
     })
@@ -38,6 +48,13 @@ class House extends Component {
     }) : null;
     return (
       <div className="House">
+        <ClipLoader
+          css={override}
+          sizeUnit={"px"}
+          size={150}
+          color={'#123abc'}
+          loading={this.state.loading}
+        />
         {inventory}
       </div>
     );

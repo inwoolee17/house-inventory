@@ -3,12 +3,12 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const StyledLink = {
-    color: 'black',
-    textDecoration: 'none'
-  };
+  color: 'black',
+  textDecoration: 'none'
+};
 
 class SimpleMenu extends React.Component {
   state = {

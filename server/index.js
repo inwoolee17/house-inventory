@@ -41,5 +41,15 @@ app.post('/api/inventory', (req, res) => {
     .catch( () => res.status(500).send() );
 });
 
+app.delete('/api/inventory/:id', (req, res) => {
+    const db = req.app.get('db');
+    const id = req.params.id;
+    db.delete_inventory({
+        id: id
+    })
+    .then(results => res.status(200).send())
+    .catch( () => res.status(500).send());
+});
+
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

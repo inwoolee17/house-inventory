@@ -28,5 +28,18 @@ app.get('/api/inventory', (req, res) => {
     .catch( () => res.status(500).send() );
 });
 
+app.post('/api/inventory', (req, res) => {
+    const db = req.app.get('db');
+    const data = req.body;
+    db.post_inventory({
+        name: data.houseName,
+        price: data.housePrice,
+        swimming_pool: data.swimmingPool,
+        image: data.houseImage
+    })
+    .then( results => res.status(200).send(results) )
+    .catch( () => res.status(500).send() );
+});
+
 const port = 4001;
 app.listen(port, () => { console.log(`Server listening on Port ${port}`)} );

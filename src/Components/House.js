@@ -33,6 +33,26 @@ class House extends Component {
     })
   };
 
+  deleteHouse = (id) => {
+    axios.delete(`/api/inventory/${id}`)
+      .then(res => {
+        console.log(res);
+        axios.get('/api/inventory')
+        .then(res => {  
+        this.setState({
+          loading: false,
+          inventory: res.data
+        })
+      })
+      .catch( error => {
+        console.log(error);
+      })
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  };
+
   render() {
     let inventory = this.state.inventory ? this.state.inventory.map( (e, i) => {
       return (
@@ -42,6 +62,7 @@ class House extends Component {
             <span>{e.name}</span>
             <span>Price: {e.price}</span>
             <span>Swimming Pool: {e.swimming_pool}</span>
+            <button onClick={ () => this.deleteHouse(e.id)}>Delete</button>
           </div>
         </div>
       );

@@ -15,6 +15,7 @@
     "massive": "^5.7.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-image-lightbox": "^5.1.0",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",

@@ -3,6 +3,8 @@ import './House.css';
 import axios from 'axios';
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 const override = css`
     display: block;
@@ -17,6 +19,8 @@ class House extends Component {
     this.state = {
       inventory: null,
       loading: true,
+      lightBoxImage: null,
+      lightBoxOpen: false,
     }
   };
 
@@ -53,11 +57,18 @@ class House extends Component {
       })
   };
 
+  lightBox = (image) => {
+    this.setState({
+      lightBoxImage: image,
+      lightBoxOpen: true,
+    })
+  };
+
   render() {
     let inventory = this.state.inventory ? this.state.inventory.map( (e, i) => {
       return (
         <div key={i} className="HouseList">
-          <img src={e.image} alt={"House"} />
+          <img onClick={ () => this.lightBox(e.image)} src={e.image} alt={"House"} />
           <div className="HouseList-Description">
             <span>{e.name}</span>
             <span>Price: {e.price}</span>
@@ -77,6 +88,12 @@ class House extends Component {
           loading={this.state.loading}
         />
         {inventory}
+        {this.state.lightBoxOpen && (
+          <Lightbox 
+            mainSrc={this.state.lightBoxImage}
+            onCloseRequest={() => this.setState({ lightBoxOpen: false })} 
+          />
+        )}
       </div>
     );
   }
